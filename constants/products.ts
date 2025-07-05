@@ -52,7 +52,7 @@ export const productsData = [
   {
     id: "6",
     title: "Modern Black Chair",
-    image: "/public/images/willdelete/product-14-13_788x1013 (3).png",
+    image: "@/public/images/willdelete/product-14-13_788x1013 (3).png",
     price: 100.0,
     colors: ["#000000", "#DDDDDD"],
     offer: 0.44,
