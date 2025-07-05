@@ -20,10 +20,11 @@ const EditProduct = () => {
           categories: ["cat1", "cat2"],
           colors: [{ name: "Red", value: "#FF0000" }],
           mainImage:
-            "https://res.cloudinary.com/df1oiiaat/image/upload/v1746701836/profilePictures/1746701833810-998345.jpg",
+            "https://res.cloudinary.com/df1oiiaat/image/upload/v1751751986/product-14-13_788x101355_ibtjk6.webp",
           galleryImages: [
-            "https://res.cloudinary.com/df1oiiaat/image/upload/v1746701836/profilePictures/1746701833810-998345.jpg",
-            "https://res.cloudinary.com/df1oiiaat/image/upload/v1746701836/profilePictures/1746701833810-998345.jpg",
+            "https://res.cloudinary.com/df1oiiaat/image/upload/v1751751988/product-14-13_788x101366_ef2dvd.webp",
+            "https://res.cloudinary.com/df1oiiaat/image/upload/v1751751985/product-14-13_788x101322_mhqdv7.webp",
+            "https://res.cloudinary.com/df1oiiaat/image/upload/v1751751984/product-14-13_788x101311_tp4j0p.webp",
           ],
         }}
       />
