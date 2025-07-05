@@ -2,7 +2,7 @@ export const productsData = [
   {
     id: "1",
     title: "Plastic Dining Armchair",
-    image: "/images/willdelete/product-14-13_788x1013(2).png",
+    image: "/images/willdelete2/product-14-13_788x101355.png",
     price: 200.0,
     colors: ["#007F7F", "#000000", "#FFFF00"],
     offer: 0.4,
@@ -22,7 +22,7 @@ export const productsData = [
   {
     id: "3",
     title: "Red Sacrificial Chair",
-    image: "/images/willdelete/product-14-13_788x1013(7).png",
+    image: "/images/willdelete/product-14-13_788x101311.png",
     price: 170.0,
     colors: ["#800000", "#000000", "#FFFFFF"],
     offer: 0.2,
@@ -32,7 +32,7 @@ export const productsData = [
   {
     id: "4",
     title: "Gray Lounge Chair",
-    image: "/images/willdelete/product-14-13_788x1013(6).png",
+    image: "/images/willdelete/product-14-13_788x101322.png",
     price: 180.0,
     colors: [],
     offer: 0.1,
@@ -52,7 +52,7 @@ export const productsData = [
   {
     id: "6",
     title: "Modern Black Chair",
-    image: "/images/willdelete/product-14-13_788x1013(3).png",
+    image: "/images/willdelete/product-14-13_788x101355.png",
     price: 100.0,
     colors: ["#000000", "#DDDDDD"],
     offer: 0.44,
@@ -62,7 +62,7 @@ export const productsData = [
   {
     id: "7",
     title: "Black Table Lamp",
-    image: "/images/willdelete/product-14-13_788x1013(4).png",
+    image: "/images/willdelete/product-14-13_788x101344.png",
     price: 140.0,
     colors: ["#000000", "#FFFF00", "#FFFFFF"],
     offer: 0,
@@ -72,7 +72,7 @@ export const productsData = [
   {
     id: "8",
     title: "Stylish Travel Backpack",
-    image: "/images/willdelete/product-14-13_788x1013(5).png",
+    image: "/images/willdelete/product-14-13_788x101333.png",
     price: 130.0,
     colors: ["#0000FF", "#000000", "#888888", "#0000FF", "#000000", "#888888"],
     offer: 0,
