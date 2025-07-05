@@ -10,7 +10,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import Image from "next/image";
 
-import mainImage from "../../public/images/willDelete/product-14-13_788x1013 (3).png";
+import mainImage from "../../public/images/willDelete/product-14-13_788x1013(3).png";
 import Link from "next/link";
 const products = [
   {

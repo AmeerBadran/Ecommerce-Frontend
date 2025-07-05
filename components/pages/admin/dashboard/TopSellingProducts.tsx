@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import RenderStars from "@/components/ui/RenderStars";
-import productImage from "@/public/images/willDelete/product-14-13_788x1013 (6).png";
+import productImage from "@/public/images/willDelete/product-14-13_788x1013(6).png";
 import Link from "next/link";
 const topProducts = [
   {
