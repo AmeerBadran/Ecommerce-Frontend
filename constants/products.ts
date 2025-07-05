@@ -12,7 +12,7 @@ export const productsData = [
   {
     id: "2",
     title: "Modern White Chair",
-    image: "/images/willdelete/product-14-13_788x1013.png",
+    image: "/images/willdelete2/product-14-13_788x1013.png",
     price: 260.0,
     colors: [],
     offer: 0.07,
@@ -22,7 +22,7 @@ export const productsData = [
   {
     id: "3",
     title: "Red Sacrificial Chair",
-    image: "/images/willdelete/product-14-13_788x101311.png",
+    image: "/images/willdelete2/product-14-13_788x101311.png",
     price: 170.0,
     colors: ["#800000", "#000000", "#FFFFFF"],
     offer: 0.2,
@@ -32,7 +32,7 @@ export const productsData = [
   {
     id: "4",
     title: "Gray Lounge Chair",
-    image: "/images/willdelete/product-14-13_788x101322.png",
+    image: "/images/willdelete2/product-14-13_788x101322.png",
     price: 180.0,
     colors: [],
     offer: 0.1,
@@ -42,7 +42,7 @@ export const productsData = [
   {
     id: "5",
     title: "Dark Gray Dining Chair",
-    image: "/images/willdelete/11_700x900.png",
+    image: "/images/willdelete2/11_700x900.png",
     price: 170.0,
     colors: [],
     offer: 0.15,
@@ -52,7 +52,7 @@ export const productsData = [
   {
     id: "6",
     title: "Modern Black Chair",
-    image: "/images/willdelete/product-14-13_788x101355.png",
+    image: "/images/willdelete2/product-14-13_788x101355.png",
     price: 100.0,
     colors: ["#000000", "#DDDDDD"],
     offer: 0.44,
@@ -62,7 +62,7 @@ export const productsData = [
   {
     id: "7",
     title: "Black Table Lamp",
-    image: "/images/willdelete/product-14-13_788x101344.png",
+    image: "/images/willdelete2/product-14-13_788x101344.png",
     price: 140.0,
     colors: ["#000000", "#FFFF00", "#FFFFFF"],
     offer: 0,
@@ -72,7 +72,7 @@ export const productsData = [
   {
     id: "8",
     title: "Stylish Travel Backpack",
-    image: "/images/willdelete/product-14-13_788x101333.png",
+    image: "/images/willdelete2/product-14-13_788x101333.png",
     price: 130.0,
     colors: ["#0000FF", "#000000", "#888888", "#0000FF", "#000000", "#888888"],
     offer: 0,
@@ -83,7 +83,7 @@ export const productsData = [
     id: "9",
     title: "Minimalist Wall Clock",
     image:
-      "/images/willdelete/11_63e20b3b-21f2-49ff-93f8-2179551f43e0_700x900.png",
+      "/images/willdelete2/11_63e20b3b-21f2-49ff-93f8-2179551f43e0_700x900.png",
     price: 90.0,
     colors: ["#FFFFFF", "#000000", "#D3D3D3"],
     offer: 0.1,
@@ -94,7 +94,7 @@ export const productsData = [
     id: "10",
     title: "Yellow Decorative Pillow",
     image:
-      "/images/willdelete/13_1c04d432-a1ba-4e9b-88a1-b9c3aecbab9d_700x900.png",
+      "/images/willdelete2/13_1c04d432-a1ba-4e9b-88a1-b9c3aecbab9d_700x900.png",
     price: 40.0,
     colors: ["#FFD700", "#FFA500"],
     offer: 0.05,
@@ -104,7 +104,7 @@ export const productsData = [
   {
     id: "11",
     title: "Modern Hanging Bulb",
-    image: "/images/willdelete/13-1_788x1000.png",
+    image: "/images/willdelete2/13-1_788x1000.png",
     price: 50.0,
     colors: ["#000000", "#FFFFFF"],
     offer: 0,
@@ -114,7 +114,7 @@ export const productsData = [
   {
     id: "12",
     title: "Black Hanging Chair",
-    image: "/images/willdelete/5_700x900.png",
+    image: "/images/willdelete2/5_700x900.png",
     price: 310.0,
     colors: ["#000000"],
     offer: 0.12,
