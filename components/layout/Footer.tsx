@@ -9,16 +9,24 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
+import logo from "@/public/logo2Yellow.png"
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="bg-black-200 text-black-300 px-6 md:px-20 pt-16 pb-8">
-      <div className="max-w-[1300px] mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row justify-between border-b border-[#222] pb-12 gap-12">
           {/* Left Section */}
           <div className="max-w-lg">
-            <h2 className="text-[#f29c52] text-3xl font-bold mb-4">Outstock</h2>
-            <p className="mb-4 leading-relaxed">
+            <Image
+              src={logo}
+              alt="Outstock logo"
+              width={190}
+              height={80}
+            />
+
+            <p className="my-4 leading-relaxed">
               Outstock is a premium Templates theme with advanced admin module.
               It’s extremely customizable, easy to use and fully responsive and
               retina ready.

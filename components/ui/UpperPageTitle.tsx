@@ -8,6 +8,7 @@ interface UpperPageTitleProps {
   subtitle?: string;
   link?: string;
   textColor?: string;
+  size?: "small" | "large" | "medium";
 }
 
 const UpperPageTitle = ({
@@ -16,9 +17,10 @@ const UpperPageTitle = ({
   subtitle,
   link,
   textColor = "text-white",
+  size = "large",
 }: UpperPageTitleProps) => {
   return (
-    <div className="relative w-full h-[520px]  bg-black bg-cover bg-center flex items-center justify-center">
+    <div className={`relative w-full ${size === "small" ? "h-[320px]" : size === "medium" ? "h-[420px]" : "h-[520px]"} bg-black bg-cover bg-center flex items-center justify-center`}>
       {image && (
         <Image
           src={image}

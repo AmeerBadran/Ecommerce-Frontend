@@ -22,16 +22,16 @@ const RenderStars = ({ ratingNumber, size = "small" }: RenderStarsProps) => {
       {[...Array(fullStars)].map((_, i) => (
         <FaStar
           key={`full-${i}`}
-          className={`text-secondary ${iconSizeClass}`}
+          className={`text-amber-500 ${iconSizeClass}`}
         />
       ))}
       {hasHalfStar && (
-        <FaRegStarHalfStroke className={`text-secondary ${iconSizeClass}`} />
+        <FaRegStarHalfStroke className={`text-amber-500 ${iconSizeClass}`} />
       )}
       {[...Array(emptyStars)].map((_, i) => (
         <FaRegStar
           key={`empty-${i}`}
-          className={`text-secondary ${iconSizeClass}`}
+          className={`text-amber-500 ${iconSizeClass}`}
         />
       ))}
     </div>

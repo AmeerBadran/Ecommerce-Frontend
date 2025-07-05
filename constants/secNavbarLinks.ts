@@ -2,12 +2,26 @@ import { CiUser } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { CiLogin } from "react-icons/ci";
 import { CiLogout } from "react-icons/ci";
+import { MdAdminPanelSettings } from "react-icons/md";
+
 
 export const secNavbarLinks = [
   {
     path: "/cart",
     label: "Cart",
     icon: HiOutlineShoppingBag,
+    color: "text-gray-600 hover:text-black",
+  },
+  {
+    path: "/admin",
+    label: "Admin",
+    icon: MdAdminPanelSettings,
+    color: "text-gray-600 hover:text-black",
+  },
+  {
+    path: "/profile",
+    label: "Profile",
+    icon: CiUser,
     color: "text-gray-600 hover:text-black",
   },
   {

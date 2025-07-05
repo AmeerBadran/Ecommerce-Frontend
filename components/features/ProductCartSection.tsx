@@ -36,57 +36,13 @@ const products = [
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
-  {
-    id: 3,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "NIS 32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  {
-    id: 4,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "NIS 90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 5,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "NIS 32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  {
-    id: 6,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "NIS 32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
 ];
+
 const ProductCartSection = () => {
   const [cartProducts, setCartProducts] = useState(products);
+  const [showModal, setShowModal] = useState(false);
+  const [customerName, setCustomerName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const incrementQuantity = (id: number) => {
     setCartProducts((prev) =>
@@ -109,6 +65,17 @@ const ProductCartSection = () => {
     (acc, product) => acc + parsePrice(product.price) * product.quantity,
     0
   );
+
+  const handleConfirmOrder = () => {
+    console.log("Order Confirmed:");
+    console.log("Name:", customerName);
+    console.log("Phone:", phoneNumber);
+    // يمكنك هنا إرسال البيانات إلى API أو تنفيذ منطق آخر
+    setShowModal(false);
+    setCustomerName("");
+    setPhoneNumber("");
+  };
+
   return (
     <section className="bg-white py-8 antialiased md:py-16">
       <div className="mx-auto max-w-[1400px] px-4 2xl:px-0">
@@ -120,7 +87,6 @@ const ProductCartSection = () => {
                   key={product.id}
                   className="flex flex-col md:flex-row items-center md:items-start justify-between pb-6 gap-10 bg-white"
                 >
-                  {/* الصورة */}
                   <Link
                     href={`/shop/product/${product.id}`}
                     className="border border-secondary/50"
@@ -130,13 +96,13 @@ const ProductCartSection = () => {
                       alt="product image"
                       width={130}
                       height={100}
-                      className="object-cover object-center rounded "
+                      className="object-cover object-center rounded"
                       style={{ aspectRatio: "5/6" }}
                       priority
                     />
                   </Link>
 
-                  <div className="flex flex-col justify-between h-full flex-1 min-w-0 ">
+                  <div className="flex flex-col justify-between h-full flex-1 min-w-0">
                     <div className="mt-3">
                       <Link
                         href={`/shop/product/${product.id}`}
@@ -207,54 +173,46 @@ const ProductCartSection = () => {
           </div>
 
           <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-            <div className="space-y-4  border border-gray-200 bg-white p-4 shadow-sm  sm:p-6">
-              <p className="text-xl font-semibold text-gray-900 ">
+            <div className="space-y-4 border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+              <p className="text-xl font-semibold text-gray-900">
                 Order summary
               </p>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  {/* كمثال بيانات ثابتة - يمكنك تعديلها لتصبح ديناميكية */}
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500 ">
+                    <dt className="text-base font-normal text-gray-500">
                       Original price
                     </dt>
-                    <dd className="text-base font-medium text-gray-900 ">
+                    <dd className="text-base font-medium text-gray-900">
                       ${totalPrice.toFixed(2)}
                     </dd>
                   </dl>
-
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500 ">
+                    <dt className="text-base font-normal text-gray-500">
                       Savings
                     </dt>
                     <dd className="text-base font-medium text-green-600">
                       -$299.00
                     </dd>
                   </dl>
-
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500 ">
+                    <dt className="text-base font-normal text-gray-500">
                       Store Pickup
                     </dt>
-                    <dd className="text-base font-medium text-gray-900 ">
-                      $99
-                    </dd>
+                    <dd className="text-base font-medium text-gray-900">$99</dd>
                   </dl>
-
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500 ">
-                      Tax
-                    </dt>
-                    <dd className="text-base font-medium text-gray-900 ">
+                    <dt className="text-base font-normal text-gray-500">Tax</dt>
+                    <dd className="text-base font-medium text-gray-900">
                       $799
                     </dd>
                   </dl>
                 </div>
 
-                <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 ">
-                  <dt className="text-base font-bold text-gray-900 ">Total</dt>
-                  <dd className="text-base font-bold text-gray-900 ">
+                <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2">
+                  <dt className="text-base font-bold text-gray-900">Total</dt>
+                  <dd className="text-base font-bold text-gray-900">
                     ${(totalPrice - 299 + 99 + 799).toFixed(2)}
                   </dd>
                 </dl>
@@ -262,16 +220,17 @@ const ProductCartSection = () => {
 
               <button
                 type="button"
+                onClick={() => setShowModal(true)}
                 className="flex w-full items-center justify-center bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary"
               >
                 Place Order
               </button>
 
               <div className="flex items-center justify-center gap-2">
-                <span className="text-sm font-normal text-gray-500 "> or </span>
+                <span className="text-sm font-normal text-gray-500">or</span>
                 <Link
                   href="/shop"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline "
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline"
                 >
                   Continue Shopping
                   <FaLongArrowAltRight />
@@ -279,26 +238,26 @@ const ProductCartSection = () => {
               </div>
             </div>
 
-            <div className="space-y-4  border border-gray-200 bg-white p-4 shadow-sm  sm:p-6">
+            <div className="space-y-4 border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <label
                     htmlFor="voucher"
-                    className="mb-2 block text-sm font-medium text-gray-900 "
+                    className="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Do you have a voucher or gift card?
                   </label>
                   <input
                     type="text"
                     id="voucher"
-                    className="block w-full border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 "
+                    className="block w-full border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                     placeholder=""
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center bg-secondary px-5 py-2.5 text-sm font-medium text-white hover:bg-black focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                  className="flex w-full items-center justify-center bg-secondary px-5 py-2.5 text-sm font-medium text-white hover:bg-black focus:outline-none focus:ring-4 focus:ring-primary-300"
                 >
                   Apply Code
                 </button>
@@ -307,6 +266,66 @@ const ProductCartSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white shadow-lg p-6 w-full max-w-md relative animate-fade-in-up mx-2">
+            <h2 className="text-xl font-bold mb-4 text-gray-800">
+              Confirm Your Order
+            </h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleConfirmOrder();
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  value={customerName}
+                  onChange={(e) => setCustomerName(e.target.value)}
+                  required
+                  className="mt-1 block w-full border border-gray-300 p-2 focus:ring-secondary focus:border-secondary"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  required
+                  className="mt-1 block w-full border border-gray-300 p-2 focus:ring-secondary focus:border-secondary"
+                />
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="text-gray-600 hover:text-red-600"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-secondary text-white px-4 py-2 hover:bg-black"
+                >
+                  Confirm Order
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

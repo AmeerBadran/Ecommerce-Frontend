@@ -70,7 +70,7 @@ const LogInFrom = () => {
         <div className="flex justify-between items-center">
           <label className="block mb-1 text-sm font-medium">Password</label>
           <Link
-            href="/forgetpassowrd"
+            href="/forgetpassword"
             className=" underline text-sm mb-1 hover:text-secondary"
           >
             Forgot your password?

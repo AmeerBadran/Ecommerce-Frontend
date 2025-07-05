@@ -12,6 +12,7 @@ const Shop = () => {
         subtitle=""
         link="Shop"
         textColor="text-white"
+        size="medium"
       />
       <ShopBody />
     </div>

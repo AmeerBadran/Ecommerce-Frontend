@@ -12,6 +12,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        sidebar: "280px",
+        "sidebar-small": "85px",
+        content: "calc(100% - 280px)",
+      },
+
+      height: {
+        header: "64px",
+        footer: "48px",
+        main: "calc(100vh - 64px - 48px)",
+      },
       fontFamily: {
         work: ["var(--font-work-sans)"],
         cairo: ["var(--font-cairo)"],
@@ -40,19 +51,22 @@ const config: Config = {
         DEFAULT: "#EE2B69",
       },
       secondary: {
-        "100": "#a8733e",
-        DEFAULT: "#BB8146",
+        "100": "#d98530",
+        DEFAULT: "#c27324",
       },
       black: {
         "100": "#333333",
         "200": "#141413",
         "300": "#7D8087",
+        "400": "#1f2128",
         DEFAULT: "#000000",
       },
       white: {
         "100": "#F7F7F7",
+        "200": "#F2F2F2",
         DEFAULT: "#FFFFFF",
       },
+      "my-color": "#0F62FE",
     },
   },
   plugins: [tailwindcssAnimate, typography],

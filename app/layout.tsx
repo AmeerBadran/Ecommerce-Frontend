@@ -4,7 +4,7 @@ import GoTopButton from "@/components/ui/GoTopButton";
 import "keen-slider/keen-slider.min.css";
 
 export const metadata: Metadata = {
-  title: "Ameer Ecommerce",
+  title: "Twwir Ecommerce",
   description: "This is the first project using next js",
 };
 

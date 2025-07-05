@@ -18,7 +18,7 @@ const ShopBody = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // يجعل التمرير سلسًا
+      behavior: "smooth",
     });
   }, [page]);
   return (
