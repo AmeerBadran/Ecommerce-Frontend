@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { IconType } from "react-icons";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface LinkData {
   href: string;
@@ -33,10 +33,14 @@ export default function SidebarItem({
 }: SidebarItemProps) {
   const [openDropdown, setOpenDropdown] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
-  const fullPath =
-    pathname + (searchParams.toString() ? "?" + searchParams.toString() : "");
+  // ✅ حساب fullPath بدون useSearchParams
+  const fullPath = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.location.pathname + window.location.search;
+    }
+    return pathname;
+  }, [pathname]);
 
   const isDropdownLinkActive = (links: LinkData[]) => {
     return links.some((link) => fullPath.startsWith(link.href));
@@ -54,8 +58,7 @@ export default function SidebarItem({
       <li className="group transition-all duration-500 px-2">
         <Link
           href={href}
-          className={`
-            flex items-center  gap-1 px-5  rounded-lg w-[90%] mx-auto transition-all duration-300
+          className={`flex items-center gap-1 px-5 rounded-lg w-[90%] mx-auto transition-all duration-300
             ${
               sidebarSize === "small"
                 ? "flex-col justify-center py-3"
@@ -89,8 +92,7 @@ export default function SidebarItem({
     <li className="group transition-all duration-500 px-2">
       <button
         onClick={() => setOpenDropdown(!openDropdown)}
-        className={`
-          flex items-center justify-center gap-1 px-5 w-[90%] mx-auto rounded-lg
+        className={`flex items-center justify-center gap-1 px-5 w-[90%] mx-auto rounded-lg
           transition-all duration-300
           ${sidebarSize === "small" ? "flex-col py-3" : "flex-row gap-3 py-4"}
           ${
@@ -104,7 +106,7 @@ export default function SidebarItem({
         <span
           className={`${
             sidebarSize === "small"
-              ? "text-[10px] font-medium text-center mt-1 "
+              ? "text-[10px] font-medium text-center mt-1"
               : "text-sm font-medium text-gray-300"
           }`}
         >
@@ -120,14 +122,11 @@ export default function SidebarItem({
       </button>
 
       <div
-        className={`
-    transition-all duration-500 ease-in-out overflow-hidden
-    ${
-      openDropdown
-        ? "max-h-96 opacity-100"
-        : "max-h-0 opacity-0 pointer-events-none"
-    }
-  `}
+        className={`transition-all duration-500 ease-in-out overflow-hidden ${
+          openDropdown
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
+        }`}
       >
         <ul
           className={`mt-1 space-y-1 ${sidebarSize === "small" ? "" : "pl-6"}`}
@@ -137,19 +136,18 @@ export default function SidebarItem({
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`
-  flex items-center gap-1 px-3 py-3 rounded-md transition-all duration-300
-  ${
-    sidebarSize === "small"
-      ? "flex-col justify-center items-center text-center"
-      : "flex-row justify-start"
-  }
-  ${
-    isCurrentLink(link.href)
-      ? "bg-secondary text-white"
-      : "text-gray-400 hover:bg-[#2b2f3c] hover:text-white"
-  }
-`}
+                  className={`flex items-center gap-1 px-3 py-3 rounded-md transition-all duration-300
+                    ${
+                      sidebarSize === "small"
+                        ? "flex-col justify-center items-center text-center"
+                        : "flex-row justify-start"
+                    }
+                    ${
+                      isCurrentLink(link.href)
+                        ? "bg-secondary text-white"
+                        : "text-gray-400 hover:bg-[#2b2f3c] hover:text-white"
+                    }
+                  `}
                 >
                   <div className="relative flex flex-col items-center">
                     {sidebarSize === "small" && (
@@ -157,7 +155,6 @@ export default function SidebarItem({
                     )}
                     <link.icon className="text-base" />
                   </div>
-
                   <span
                     className={`${
                       sidebarSize === "small"

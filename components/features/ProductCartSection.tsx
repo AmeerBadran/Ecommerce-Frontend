@@ -185,7 +185,7 @@ const ProductCartSection = () => {
                       Original price
                     </dt>
                     <dd className="text-base font-medium text-gray-900">
-                      ${totalPrice.toFixed(2)}
+                      ILS {totalPrice.toFixed(2)}
                     </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">
@@ -193,19 +193,21 @@ const ProductCartSection = () => {
                       Savings
                     </dt>
                     <dd className="text-base font-medium text-green-600">
-                      -$299.00
+                      -ILS 299.00
                     </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">
                     <dt className="text-base font-normal text-gray-500">
                       Store Pickup
                     </dt>
-                    <dd className="text-base font-medium text-gray-900">$99</dd>
+                    <dd className="text-base font-medium text-gray-900">
+                      ILS 99
+                    </dd>
                   </dl>
                   <dl className="flex items-center justify-between gap-4">
                     <dt className="text-base font-normal text-gray-500">Tax</dt>
                     <dd className="text-base font-medium text-gray-900">
-                      $799
+                      ILS 799
                     </dd>
                   </dl>
                 </div>
@@ -213,7 +215,7 @@ const ProductCartSection = () => {
                 <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2">
                   <dt className="text-base font-bold text-gray-900">Total</dt>
                   <dd className="text-base font-bold text-gray-900">
-                    ${(totalPrice - 299 + 99 + 799).toFixed(2)}
+                    ILS {(totalPrice - 299 + 99 + 799).toFixed(2)}
                   </dd>
                 </dl>
               </div>

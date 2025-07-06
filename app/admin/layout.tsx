@@ -21,7 +21,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   });
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  console.log(windowSize.isSmallScreen, windowSize.isHalfScreen);
   useEffect(() => {
     const storedSize = localStorage.getItem("sidebarSize");
     if (storedSize === "small" || storedSize === "big") {

@@ -98,7 +98,6 @@ const CustomerCard: React.FC<CustomerCardProps> = ({
             <span className="text-red-400">Forbidden</span>
           </p>
         )}
-
       </motion.div>
       <div className="absolute top-4 right-4 z-[999]">
         <button
@@ -111,7 +110,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({
           <div className="absolute right-0 mt-2 w-48 border border-secondary text-black rounded-xl shadow-lg z-[999] bg-white">
             <div className="text-sm text-black">
               <Link
-                href={`/admin/customers/customerDetails/${cust.id}`}
+                href={`/admin/customers/${cust.id}`}
                 className="flex items-center gap-2 px-4 py-2 hover:bg-secondary hover:text-white transition duration-150 rounded-t-xl"
               >
                 <FaEye />
