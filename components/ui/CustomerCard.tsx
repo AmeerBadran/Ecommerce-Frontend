@@ -52,7 +52,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+        className="bg-white p-5 h-full rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
       >
         <div className="flex items-center gap-4 mb-4">
           <Image
@@ -111,7 +111,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({
           <div className="absolute right-0 mt-2 w-48 border border-secondary text-black rounded-xl shadow-lg z-[999] bg-white">
             <div className="text-sm text-black">
               <Link
-                href={`/admin/customers/${cust.id}`}
+                href={`/admin/customers/customerDetails/${cust.id}`}
                 className="flex items-center gap-2 px-4 py-2 hover:bg-secondary hover:text-white transition duration-150 rounded-t-xl"
               >
                 <FaEye />
