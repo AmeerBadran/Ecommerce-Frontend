@@ -41,7 +41,7 @@ const config: Config = {
       "2md": "820px",
       slg: "950px",
       lg: "1024px",
-      llg: "1094px",
+      llg: "1120px",
       xl: "1280px",
       "2xl": "1336px",
     },

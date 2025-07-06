@@ -45,7 +45,7 @@ const TopSellingProducts = () => {
                 {product.name}
               </Link>
               <RenderStars ratingNumber={4.5} size="small" />
-              <p className="text-sm font-medium mt-1">${product.price}</p>
+              <p className="text-sm font-medium mt-1">ILS {product.price}</p>
             </div>
           </li>
         ))}

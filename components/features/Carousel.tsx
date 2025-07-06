@@ -111,7 +111,7 @@ export default function Carousel() {
                 animate="visible"
                 exit="exit"
                 className={clsx(
-                  "absolute left-10 lg:left-1/7 top-1/4 md:top-1/3 z-30 max-w-md space-y-4",
+                  "absolute left-10 lg:left-1/8 top-1/4 md:top-1/3 z-30 max-w-md space-y-4",
                   image.darkBackground ? "text-white" : "text-black"
                 )}
               >

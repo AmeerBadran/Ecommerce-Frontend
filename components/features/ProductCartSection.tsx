@@ -17,7 +17,7 @@ const products = [
     name: "Throwback Hip Bag",
     href: "#",
     color: "Salmon",
-    price: "NIS 90.00",
+    price: "ILS 90.00",
     quantity: 1,
     imageSrc:
       "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
@@ -29,7 +29,7 @@ const products = [
     name: "Medium Stuff Satchel",
     href: "#",
     color: "Blue",
-    price: "NIS 32.00",
+    price: "ILS 32.00",
     quantity: 1,
     imageSrc:
       "https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
@@ -59,7 +59,7 @@ const ProductCartSection = () => {
   };
 
   const parsePrice = (price: string) =>
-    Number(price.replace(/(NIS|\$|,|\s)/g, ""));
+    Number(price.replace(/(ILS|\$|,|\s)/g, ""));
 
   const totalPrice = cartProducts.reduce(
     (acc, product) => acc + parsePrice(product.price) * product.quantity,
@@ -161,7 +161,7 @@ const ProductCartSection = () => {
                       <FaRegTrashAlt className="w-5 h-5" />
                     </button>
                     <p className="md:mt-4 text-lg text-gray-700">
-                      NIS{" "}
+                      ILS{" "}
                       {(parsePrice(product.price) * product.quantity).toFixed(
                         2
                       )}

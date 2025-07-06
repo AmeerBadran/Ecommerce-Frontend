@@ -33,7 +33,7 @@ const Navbar = ({ onCartOpen }: NavbarProps) => {
 
   return (
     <header>
-      <div className="2xl:h-[90px] h-20 flex items-center justify-between max-w-[1400px] mx-auto bg-white relative ">
+      <div className="2xl:h-[90px] px-5 h-20 flex items-center justify-between max-w-[1400px] mx-auto bg-white relative ">
         <div
           className={`flex  ${
             isHalfScreen ? "justify-center" : "justify-center w-full"

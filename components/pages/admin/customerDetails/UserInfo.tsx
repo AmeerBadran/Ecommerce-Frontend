@@ -49,9 +49,8 @@ const UserInfo = ({ user }: { user: User }) => {
           </p>
         </div>
       </div>
-      {/* زر عرض الفواتير */}
       <Link
-        href={`/admin/payment/${user.id}`} // تأكد من أن هذا المسار يتماشى مع إعدادات Route لديك
+        href={`/admin/payment/${user.id}`}
         className="bg-white shadow-md  text-secondary border border-secondary px-6 py-4 rounded-lg hover:bg-secondary hover:text-white transition-all duration-300"
       >
         View Details

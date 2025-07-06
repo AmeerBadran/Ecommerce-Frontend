@@ -1,6 +1,5 @@
-
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import PriceSlider from "@/components/ui/PriceSlider";
 import ProductListItem from "@/components/ui/ProductListItem";
 import { categoriesData } from "@/constants/categoriesData";
@@ -13,6 +12,13 @@ interface SidebarFiltersProps {
 }
 
 const SidebarFilters = ({ price, onPriceChange }: SidebarFiltersProps) => {
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
+  const handleColorClick = (colorCode: string) => {
+    setSelectedColor((prev) => (prev === colorCode ? null : colorCode));
+    console.log("Selected Color:", colorCode);
+  };
+
   return (
     <div className="w-full flex flex-col gap-8 mb-5 px-4 divide-dashed divide-y divide-gray-300 xl:col-span-1">
       {/* Categories */}
@@ -40,9 +46,13 @@ const SidebarFilters = ({ price, onPriceChange }: SidebarFiltersProps) => {
           {colors.map((color) => (
             <div key={color.id} className="relative group w-full aspect-square">
               <button
-                className="w-full h-full rounded-full border border-gray-700 hover:border-secondary transition-colors duration-300"
+                onClick={() => handleColorClick(color.color)}
+                className={`w-full h-full rounded-full border transition-all duration-300 ${
+                  selectedColor === color.color
+                    ? "border-3 border-my-color"
+                    : "border border-gray-700 hover:border-secondary"
+                }`}
                 style={{ backgroundColor: color.color }}
-                onClick={() => console.log(color.color)}
               />
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-white text-xs rounded shadow-md scale-95 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-10 whitespace-nowrap">
                 {color.name}

@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import profileImage from "../../public/images/noUser.png";
+
 import sidebarItems from "../../constants/sidebarItems";
 import SidebarItem from "../ui/SidebarLink";
 import { useEffect } from "react";
@@ -27,7 +26,7 @@ export default function Sidebar({
     if (isSmallScreen) {
       setSidebarSize("small");
     }
-  }, [isSmallScreen]);
+  }, [isSmallScreen, setSidebarSize]);
 
   const isOverlay = isSmallScreen;
 
@@ -70,22 +69,7 @@ export default function Sidebar({
           isHalfScreen ? "mt-sidebar-small" : ""
         }`}
       >
-        <div
-          className={`mt-6 mb-4 flex items-center gap-3 px-4 ${
-            sidebarSize === "big" || isSmallScreen ? "" : "mx-auto"
-          }`}
-        >
-          <Image
-            src={profileImage}
-            alt="Profile"
-            width={38}
-            height={38}
-            className="rounded-full shadow-md object-cover"
-          />
-          {sidebarSize === "big" || isSmallScreen ? (
-            <p className="text-white text-sm font-medium">John Doe</p>
-          ) : null}
-        </div>
+        
 
         {sidebarSize === "big" && (
           <h2 className="text-gray-400 uppercase text-sm font-semibold tracking-widest px-5 mt-4 mb-3">

@@ -33,10 +33,10 @@ const OrderProductItem = ({ product }: { product: Product }) => {
           {product.name}
         </Link>
         <p className="text-sm text-gray-500">
-          Qty: {product.quantity} × ${product.price}
+          Qty: {product.quantity} × ILS {product.price}
         </p>
         <p className="text-sm font-semibold text-black">
-          Total: ${(product.quantity * product.price).toFixed(2)}
+          Total: ILS {(product.quantity * product.price).toFixed(2)}
         </p>
       </div>
     </div>

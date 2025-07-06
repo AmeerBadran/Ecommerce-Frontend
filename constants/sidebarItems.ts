@@ -1,10 +1,8 @@
 import { RiDashboard2Fill } from "react-icons/ri";
 import { FaBoxOpen, FaClipboardList, FaUsers } from "react-icons/fa";
-import { MdCategory, MdLocalOffer, MdOutlineReviews } from "react-icons/md";
-import { BiSolidCoupon } from "react-icons/bi";
-import { IoMdAnalytics } from "react-icons/io";
+import { MdCategory, MdOutlineReviews } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
-import { HiOutlineDocumentReport } from "react-icons/hi";
+import { RiMessage2Fill } from "react-icons/ri";
 
 const sidebarItems = [
   {
@@ -60,25 +58,25 @@ const sidebarItems = [
     iconColor: "text-orange-600",
     data: [
       {
-        href: "/admin/orders",
+        href: "/admin/orders?status=all",
         icon: FaClipboardList,
         label: "All Orders",
         iconColor: "text-orange-500",
       },
       {
-        href: "/admin/orders/pending",
+        href: "/admin/orders?status=pending",
         icon: FaClipboardList,
         label: "Pending Orders",
         iconColor: "text-yellow-500",
       },
       {
-        href: "/admin/orders/shipped",
+        href: "/admin/orders?status=shipped",
         icon: FaClipboardList,
         label: "Shipped Orders",
         iconColor: "text-blue-500",
       },
       {
-        href: "/admin/orders/returned",
+        href: "/admin/orders?status=returned",
         icon: FaClipboardList,
         label: "Returned Orders",
         iconColor: "text-red-500",
@@ -86,59 +84,23 @@ const sidebarItems = [
     ],
   },
   {
-    type: "dropdown",
+    type: "link",
     Icon: MdOutlineReviews,
-    label: "Reviews",
-    iconColor: "text-yellow-600",
-    data: [
-      {
-        href: "/admin/reviews",
-        icon: MdOutlineReviews,
-        label: "Product Reviews",
-        iconColor: "text-yellow-500",
-      },
-      {
-        href: "/admin/reviews/reports",
-        icon: HiOutlineDocumentReport,
-        label: "Reported Reviews",
-        iconColor: "text-red-500",
-      },
-    ],
-  },
-  {
-    type: "dropdown",
-    Icon: MdLocalOffer,
-    label: "Marketing",
-    iconColor: "text-green-700",
-    data: [
-      {
-        href: "/admin/coupons",
-        icon: BiSolidCoupon,
-        label: "Coupons",
-        iconColor: "text-green-500",
-      },
-      {
-        href: "/admin/banners",
-        icon: MdLocalOffer,
-        label: "Banners",
-        iconColor: "text-blue-500",
-      },
-      {
-        href: "/admin/campaigns",
-        icon: MdLocalOffer,
-        label: "Campaigns",
-        iconColor: "text-pink-600",
-      },
-    ],
+    data: {
+      href: "/admin/reviews",
+      icon: MdOutlineReviews,
+      label: "Product Reviews",
+      iconColor: "text-yellow-500",
+    },
   },
   {
     type: "link",
-    Icon: IoMdAnalytics,
+    Icon: RiMessage2Fill,
     data: {
-      href: "/admin/analytics",
-      icon: IoMdAnalytics,
-      label: "Analytics",
-      iconColor: "text-purple-700",
+      href: "/admin/messages",
+      icon: RiMessage2Fill,
+      label: "Messages",
+      iconColor: "text-teal-600",
     },
   },
   {

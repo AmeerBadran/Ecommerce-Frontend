@@ -35,9 +35,9 @@ const ProductListItem: FC<ProductListItemProps> = ({ product, size }) => {
       <div>
         <p className="text-sm text-gray-800">{product.title}</p>
         <div className="flex text-sm items-center gap-2">
-          <span>NIS {(product.price * (1 - product.offer)).toFixed(2)}</span>
+          <span>ILS {(product.price * (1 - product.offer)).toFixed(2)}</span>
           {product.offer > 0 && size === "big" && (
-            <del className="text-gray-400">NIS {product.price}</del>
+            <del className="text-gray-400">ILS {product.price}</del>
           )}
         </div>
       </div>

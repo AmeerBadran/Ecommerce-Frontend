@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { IconType } from "react-icons";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface LinkData {
   href: string;
@@ -33,6 +33,17 @@ export default function SidebarItem({
 }: SidebarItemProps) {
   const [openDropdown, setOpenDropdown] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const fullPath =
+    pathname + (searchParams.toString() ? "?" + searchParams.toString() : "");
+
+  const isDropdownLinkActive = (links: LinkData[]) => {
+    return links.some((link) => fullPath.startsWith(link.href));
+  };
+  const isCurrentLink = (href: string) => {
+    return fullPath === href;
+  };
 
   const isActive = (href: string) => pathname === href;
 
@@ -82,7 +93,11 @@ export default function SidebarItem({
           flex items-center justify-center gap-1 px-5 w-[90%] mx-auto rounded-lg
           transition-all duration-300
           ${sidebarSize === "small" ? "flex-col py-3" : "flex-row gap-3 py-4"}
-          ${openDropdown ? "bg-[#2b2f3c]" : "hover:bg-[#2b2f3c]"}
+          ${
+            openDropdown || (Array.isArray(data) && isDropdownLinkActive(data))
+              ? "bg-[#2b2f3c]"
+              : "hover:bg-[#2b2f3c]"
+          }
         `}
       >
         <Icon className={`text-xl ${iconColor}`} />
@@ -123,18 +138,18 @@ export default function SidebarItem({
                 <Link
                   href={link.href}
                   className={`
-              flex items-center gap-1 px-3 py-3 rounded-md transition-all duration-300
-              ${
-                sidebarSize === "small"
-                  ? "flex-col justify-center items-center text-center"
-                  : "flex-row justify-start"
-              }
-              ${
-                isActive(link.href)
-                  ? "bg-secondary text-white"
-                  : "text-gray-400 hover:bg-[#2b2f3c] hover:text-white"
-              }
-            `}
+  flex items-center gap-1 px-3 py-3 rounded-md transition-all duration-300
+  ${
+    sidebarSize === "small"
+      ? "flex-col justify-center items-center text-center"
+      : "flex-row justify-start"
+  }
+  ${
+    isCurrentLink(link.href)
+      ? "bg-secondary text-white"
+      : "text-gray-400 hover:bg-[#2b2f3c] hover:text-white"
+  }
+`}
                 >
                   <div className="relative flex flex-col items-center">
                     {sidebarSize === "small" && (

@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   });
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  console.log(windowSize.isSmallScreen, windowSize.isHalfScreen);
   useEffect(() => {
     const storedSize = localStorage.getItem("sidebarSize");
     if (storedSize === "small" || storedSize === "big") {
@@ -30,8 +30,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
     const updateSize = () => {
       const width = window.innerWidth;
-      const isSmall = width < 640;
-      const isHalf = width < 1024;
+      const isSmall = width < 820;
+      const isHalf = width < 1280;
 
       setWindowSize({
         isSmallScreen: isSmall,
@@ -52,7 +52,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   const getContentMargin = () => {
     if (windowSize.isSmallScreen) return "";
-    return sidebarSize === "big" ? "lg:ml-[280px]" : "lg:ml-[85px]";
+    return sidebarSize === "big"
+      ? "2md:ml-[280px]"
+      : "2md:ml-[85px]";
   };
 
   return (
@@ -83,16 +85,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         />
 
         <main
-          className={`bg-white-200 w-full min-h-[calc(100vh-70px)] mt-[70px] py-6 px-7
-  ${windowSize.isSmallScreen ? "w-full" : ""}
-  ${
-    windowSize.isHalfScreen && !windowSize.isSmallScreen
-      ? sidebarSize === "small"
-        ? "clc-width-70"
-        : "clc-width-244"
-      : ""
-  }
-`}
+          className={`bg-white-200 w-full min-h-[calc(100vh-70px)] mt-[70px] py-6 px-7 transition-all duration-300 ${getContentMargin()}`}
         >
           {children}
         </main>

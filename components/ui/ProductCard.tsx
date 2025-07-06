@@ -106,9 +106,9 @@ const ProductCard = ({
         </Link>
         <div className="flex w-full items-center justify-between gap-2">
           <div className="flex text-sm items-center gap-2">
-            <span>NIS {(price * (1 - offer)).toFixed(2)}</span>
+            <span>ILS {(price * (1 - offer)).toFixed(2)}</span>
             {offer > 0 && quantity > 1 && (
-              <del className="text-gray-400">NIS {price}</del>
+              <del className="text-gray-400">ILS {price}</del>
             )}
           </div>
         </div>

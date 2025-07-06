@@ -66,7 +66,7 @@ const CollectionCard = ({
           <p className="z-10">
             By now /{" "}
             <span className="text-secondary-100 group-hover:text-white transition-all delay-200 ease-out duration-300">
-              NIS {price.toFixed(2)}
+              ILS {price.toFixed(2)}
             </span>
           </p>
         </Link>

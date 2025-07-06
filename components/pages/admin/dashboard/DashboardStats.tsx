@@ -11,7 +11,7 @@ const stats = [
   },
   {
     title: "Today's Revenue",
-    value: "$1,750",
+    value: "ILS 1,750",
     icon: <FaDollarSign className="text-3xl text-green-500" />,
   },
   {

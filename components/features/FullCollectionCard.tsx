@@ -45,7 +45,7 @@ const FullCollectionCard = ({ collection }: { collection: Collection }) => {
         <div className="flex items-center gap-2">
           {collection.price && (
             <span className="text-gray-900">
-              NIS {collection.price.toFixed(2)}
+              ILS {collection.price.toFixed(2)}
             </span>
           )}
         </div>

@@ -16,7 +16,9 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
 }) => {
 
   return (
-    <Box sx={{ width: "100%", maxWidth: 350, p: "0 12px 0 12px", borderRadius: 3 }}>
+    <Box
+      sx={{ width: "100%", maxWidth: 350, p: "0 12px 0 12px", borderRadius: 3 }}
+    >
       <Slider
         value={value}
         onChange={onChange}
@@ -80,7 +82,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
             color: "#b27941",
           }}
         >
-          ${min}
+          ILS {min}
         </Box>
         <Box
           sx={{
@@ -96,7 +98,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
             color: "#b27941",
           }}
         >
-          ${max}
+          ILS {max}
         </Box>
       </Stack>
     </Box>
