@@ -126,14 +126,16 @@ const Categories = () => {
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-xl shadow-lg flex flex-col items-center bg-white p-4">
-        <table className="min-w-full text-left border-b border-gray-400 pb-100 mb-7">
-          <thead className="bg-white border-b border-gray-400 ">
+      <div className="bg-white p-4 rounded-xl shadow-lg w-full overflow-auto">
+        <table className="min-w-[700px] w-full text-left border-b border-gray-400">
+          <thead className="bg-white border-b border-gray-400">
             <tr>
-              <th className="px-6 py-4">ID</th>
-              <th className="px-6 py-4">Name</th>
-              <th className="px-6 py-4">Description</th>
-              <th className="px-6 py-4 text-center">Actions</th>
+              <th className="px-6 py-4 whitespace-nowrap">ID</th>
+              <th className="px-6 py-4 whitespace-nowrap">Name</th>
+              <th className="px-6 py-4 whitespace-nowrap">Description</th>
+              <th className="px-6 py-4 whitespace-nowrap text-center">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -145,9 +147,9 @@ const Categories = () => {
                     alt={cat.name}
                     width={60}
                     height={60}
-                    className="rounded-lg object-cover"
+                    className="rounded-lg min-w-[60px] object-cover"
                   />
-                  {cat.id}
+                  <span className="whitespace-nowrap">{cat.id}</span>
                 </td>
                 <td className="px-6 py-4 font-semibold">{cat.name}</td>
                 <td className="px-6 py-4 text-gray-600">{cat.description}</td>
@@ -172,6 +174,8 @@ const Categories = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="mt-6">
         <Pagination
           currentPage={page}
           total={total}
@@ -179,7 +183,6 @@ const Categories = () => {
           onPageChange={(newPage) => setPage(newPage)}
         />
       </div>
-
       <AnimatePresence>
         {showModal && (
           <motion.div

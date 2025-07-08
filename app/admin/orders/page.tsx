@@ -80,7 +80,7 @@ const Orders = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white text-gray-800 font-sans">
+    <div className="min-h-screen text-gray-800 font-sans">
       <DashboardHeader title="Orders Management" />
 
       <OrderFilters

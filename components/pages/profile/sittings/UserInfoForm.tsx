@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import userImage from "@/public/images/noUser.png";
+import { FaUpload } from "react-icons/fa";
 
 const UserInfoForm = () => {
   const [image, setImage] = useState<string | null>();
@@ -47,9 +48,10 @@ const UserInfoForm = () => {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
+            title="Change Profile Picture"
             className="px-4 py-2 text-sm border text-secondary border-secondary hover:bg-secondary hover:text-white transition"
           >
-            Change Profile Picture
+            <FaUpload />
           </button>
           <input
             type="file"

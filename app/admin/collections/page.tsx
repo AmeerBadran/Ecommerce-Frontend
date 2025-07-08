@@ -191,11 +191,11 @@ const Collections = () => {
                 alt={selected.title}
                 width={800}
                 height={300}
-                className="w-1/2 h-auto border-2 border-black-300 object-cover rounded-xl mb-4 mx-auto"
+                className="md:w-1/2 h-auto border-2 border-black-300 object-cover rounded-xl mb-4 mx-auto"
               />
               <p className="text-gray-700 mb-4">{selected.description}</p>
               <h3 className="text-lg font-semibold mb-2">Products</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 xmobile:grid-cols-2 md:grid-cols-4 gap-4">
                 {selected.products.map((p) => (
                   <div
                     key={p.id}

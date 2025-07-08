@@ -217,7 +217,7 @@ const CollectionFormPage = ({ mode }: CollectionFormPageProps) => {
             className="w-full border border-gray-300 p-2 mb-4 rounded focus:outline-none focus:ring focus:ring-secondary"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 xmobile:grid-cols-2 md:grid-cols-3 gap-4">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}

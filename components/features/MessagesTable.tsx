@@ -89,7 +89,7 @@ const MessagesTable = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col md:flex-row gap-3 items-center justify-between mb-6">
           <h2 className="text-xl font-semibold">User Messages</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <input

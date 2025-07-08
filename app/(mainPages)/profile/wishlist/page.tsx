@@ -34,14 +34,14 @@ const WishList = () => {
     setWishlist((prev) => prev.filter((item) => item.id !== id));
   };
   return (
-    <div className="bg-white shadow-sm border border-secondary/30 sm:p-4">
+    <div className="bg-white shadow-sm border border-secondary/30 p-2 sm:p-4 ">
       <h2 className="text-xl font-semibold text-secondary mb-5">
         My Wish List
       </h2>
       <hr className="mb-6 text-black/30" />
       {wishlist.length > 0 ? (
         <>
-          <div className="grid gap-3 xmobile:grid-cols-2 md:grid-cols-2 2md:grid-cols-2">
+          <div className="grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 ">
             {wishlist.map((product) => (
               <WishListItem
                 key={product.id}

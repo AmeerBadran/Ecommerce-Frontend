@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { FaBirthdayCake, FaPhone } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -20,8 +19,8 @@ interface User {
 
 const UserInfo = ({ user }: { user: User }) => {
   return (
-    <div className="flex justify-between items-center bg-white p-6 rounded-2xl shadow-lg mb-10">
-      <div className="flex items-center">
+    <div className="flex justify-between items-center bg-gradient-to-r from-secondary/20 to-secondary/90 p-6 rounded-2xl shadow-lg mb-10">
+      <div className="flex flex-col md:flex-row items-center">
         <Image
           src={profileImage}
           alt="Profile"
@@ -49,12 +48,6 @@ const UserInfo = ({ user }: { user: User }) => {
           </p>
         </div>
       </div>
-      <Link
-        href={`/admin/payment/${user.id}`}
-        className="bg-white shadow-md  text-secondary border border-secondary px-6 py-4 rounded-lg hover:bg-secondary hover:text-white transition-all duration-300"
-      >
-        View Details
-      </Link>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Settings = () => {
   const [activeTab, setActiveTab] = useState("account");
 
   return (
-    <div className="bg-white shadow-sm border border-secondary/30 sm:p-4">
+    <div className="bg-white shadow-sm border border-secondary/30 p-4">
       <h2 className="text-xl font-semibold text-secondary mb-5">
         Account Settings
       </h2>

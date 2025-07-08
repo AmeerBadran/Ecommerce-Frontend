@@ -45,13 +45,13 @@ const OrderFilters = ({
         type="date"
         value={dateFrom}
         onChange={(e) => onDateFromChange(e.target.value)}
-        className="p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+        className="p-3 border w-full border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
       />
       <input
         type="date"
         value={dateTo}
         onChange={(e) => onDateToChange(e.target.value)}
-        className="p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+        className="p-3 border w-full border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
       />
     </div>
   );

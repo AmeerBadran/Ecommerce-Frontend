@@ -114,7 +114,7 @@ const AddProductForm = ({ mode, initialData }: AddProductFormProps) => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="my-12 bg-white shadow-lg rounded-2xl p-10 border border-gray-200"
+      className="my-12 bg-white shadow-lg rounded-2xl p-4 md:p-10 border border-gray-200"
     >
       <form
         onSubmit={formik.handleSubmit}
@@ -323,7 +323,7 @@ const AddProductForm = ({ mode, initialData }: AddProductFormProps) => {
           <div>
             <label className="block text-black mb-2">Additional Images</label>
             <div
-              className="relative w-full lg:max-w-full lg:w-full border-2 border-dashed border-secondary rounded-lg flex flex-col items-center justify-center cursor-pointer hover:brightness-110 transition"
+              className="relative w-full lg:max-w-full lg:w-full border-2 min-h-[180px] border-dashed border-secondary rounded-lg flex flex-col items-center justify-center cursor-pointer hover:brightness-110 transition"
               onClick={() => document.getElementById("galleryImages")?.click()}
             >
               {galleryPreviews.length === 0 ? (

@@ -102,7 +102,7 @@ const ProductReviewsTable = () => {
                 <td className="py-3 px-2 text-gray-700">
                   {review.reviewTitle}
                 </td>
-                <td className="py-3 px-2 text-gray-600">
+                <td className="py-3 px-2 text-gray-600 min-w-[200px]">
                   {review.reviewContent}
                 </td>
                 <td className="py-3 px-2 text-yellow-500">

@@ -74,36 +74,14 @@ const sidebarItems = [
     ],
   },
   {
-    type: "dropdown",
+    type: "link",
     Icon: FaClipboardList,
-    label: "Orders",
-    iconColor: "text-orange-600",
-    data: [
-      {
-        href: "/admin/orders?status=all",
-        icon: FaClipboardList,
-        label: "All Orders",
-        iconColor: "text-orange-500",
-      },
-      {
-        href: "/admin/orders?status=pending",
-        icon: FaClipboardList,
-        label: "Pending Orders",
-        iconColor: "text-yellow-500",
-      },
-      {
-        href: "/admin/orders?status=shipped",
-        icon: FaClipboardList,
-        label: "Shipped Orders",
-        iconColor: "text-blue-500",
-      },
-      {
-        href: "/admin/orders?status=returned",
-        icon: FaClipboardList,
-        label: "Returned Orders",
-        iconColor: "text-red-500",
-      },
-    ],
+    data: {
+      href: "/admin/orders",
+      icon: FaClipboardList,
+      label: "Orders",
+      iconColor: "text-orange-500",
+    },
   },
   {
     type: "link",
