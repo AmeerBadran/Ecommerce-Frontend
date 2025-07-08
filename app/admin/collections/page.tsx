@@ -133,7 +133,7 @@ const Collections = () => {
                     handleMenuClose();
                   }}
                 >
-                  <Link href={`/admin/collections/edit/${collection.id}`} className="flex items-center">
+                  <Link href={`/admin/collections/edit/${collection.id}`} className="flex items-center w-full h-full">
                     <FaEdit className="mr-2 text-blue-500" /> Edit
                   </Link>
                 </MenuItem>
