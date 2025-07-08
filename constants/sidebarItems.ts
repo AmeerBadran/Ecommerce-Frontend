@@ -3,6 +3,8 @@ import { FaBoxOpen, FaClipboardList, FaUsers } from "react-icons/fa";
 import { MdCategory, MdOutlineReviews } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
 import { RiMessage2Fill } from "react-icons/ri";
+import { BsFillCollectionFill } from "react-icons/bs";
+import { BsClipboard2Fill } from "react-icons/bs";
 
 const sidebarItems = [
   {
@@ -53,6 +55,26 @@ const sidebarItems = [
   },
   {
     type: "dropdown",
+    Icon: BsFillCollectionFill,
+    label: "Collections",
+    iconColor: "text-amber-600",
+    data: [
+      {
+        href: "/admin/collections",
+        icon: BsFillCollectionFill,
+        label: "All Collections",
+        iconColor: "text-amber-500",
+      },
+      {
+        href: "/admin/collections/add",
+        icon: BsFillCollectionFill,
+        label: "Add Collection",
+        iconColor: "text-green-600",
+      },
+    ],
+  },
+  {
+    type: "dropdown",
     Icon: FaClipboardList,
     label: "Orders",
     iconColor: "text-orange-600",
@@ -82,6 +104,16 @@ const sidebarItems = [
         iconColor: "text-red-500",
       },
     ],
+  },
+  {
+    type: "link",
+    Icon: BsClipboard2Fill,
+    data: {
+      href: "/admin/blogs",
+      icon: BsClipboard2Fill,
+      label: "Blogs",
+      iconColor: "text-amber-600",
+    },
   },
   {
     type: "link",
